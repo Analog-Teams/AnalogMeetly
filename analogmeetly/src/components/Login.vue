@@ -20,7 +20,21 @@
     </form>
   </div>
   <div class="footer">
-    sss
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img :src="require(`@/assets/${'flogo.png'}`)" alt="analogteams">
+      </div>
+      <div class="c1">
+        <h4>CONTACT US:</h4>
+        <a href="https://twitter.com/analogteams" target="_blank"><i class="fab fa-twitter"><span>Analog on Twitter</span></i></a>
+        <a href="mailto:teyibo@analogteams.com" target="_blank"><i class="fas fa-envelope"><span>Email Us</span></i></a>
+      </div>
+      <div class="c2">
+        <h4>LOCATIONS:</h4>
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Washington D.C., Dallas, Accra, Lagos, Nairobi</span>
+      </div>
+    </div>
   </div>
 </div>
 </template>
@@ -70,6 +84,17 @@ export default {
   background: rgba(255, 255, 255, 0.5);
   transition: 200ms ease-in-out;
 }
+.footer{
+    background-color: #000;
+    width: 100%;
+    max-width: 100%;
+    color: #fff;
+}
+.footer-content{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 @media(max-width:768px) {
   .header-logo{
     max-height: 95px;
@@ -92,12 +117,15 @@ export default {
     max-width: 100%;
     background-position:58%;
   }
+  .form h1{
+    top:15%;
+  }
   .form-field {
     background-color: rgba(10,10,200,0.4);
     border-radius: 10px;
     position: absolute;
     background-attachment: fixed;
-    top:34%;
+    top:25%;
     width: 78%;
     left:12%;
     height: 60vh;
@@ -125,12 +153,49 @@ export default {
     margin: 16px 20px;
     color: #fff;
   }
-  .footer{
-    background-color: #000;
-    width: 100%;
+  .footer-content{
     max-width: 100%;
-    height: 10vh;
+    height: 40vh;
+    display: block;
+    margin-left: 20px;
+    margin-top:0;
+  }
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-logo {
+    margin-left:20px;
+  }
+  .footer-logo img{
+    max-height: 60px;
+  }
+  .footer-content .c1{
+    margin: 10px;
+  }
+  .footer-content .c1{
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-content .c1 i {
     color: #fff;
+    margin-top:9px;
+  }
+  .footer-content .c1 i>span{
+      font-family: 'Poppins',sans-serif;
+  }
+  .footer-content .c2 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 9px;
+  }
+  .footer-content .c2 i {
+    font-size: 20px;
+    color:red;
+    margin-left:20px;
+  }
+  .footer-content .c2>span{
+    font-family: 'Poppins',sans-serif;
   }
 }
 @media(min-width:768px) {
@@ -186,7 +251,43 @@ export default {
     margin: 2.2% 25%;
     color: #fff;
     font-size: 18px;
-
+  }
+  .footer-content {
+    max-width: 100%;
+    height: 24vh;
+  }
+  .footer-logo{
+    margin-left: 280px;
+    margin-top: 20px;
+  }
+  .footer-content .c1{
+    margin: 30px 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-content .c2 {
+    margin: 30px 400px;
+  }
+  .footer-content .c1 i{
+    color: #fff;
+    margin:10px 0px;
+  }
+  .footer-content .c1 i>span {
+  font-family: 'Poppins',sans-serif;
+  color:#fff;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-left: 10px;
+  }
+  .footer-content .c2 i{
+    position: absolute;
+    left:67%;
+    font-size:50px;
+    color: red;
+  }
+  .footer-content .c2 span{
+    font-family: 'Poppins',sans-serif;
+    font-size: 15.6px;
   }
 }
 
