@@ -3,8 +3,7 @@
     <div class="container-fliud">
       <div class="row">
         <div class="col-12" >
-          <!-- Login component -->
-          <Login />
+          <Home />
         </div>
       </div>
     </div>
@@ -12,11 +11,10 @@
 </template>
 
 <script>
-import Login from './components/Login';
+import Home from './components/Home';
 export default {
   components: {
-    Login
-
+    Home
   }
 }
 </script>
