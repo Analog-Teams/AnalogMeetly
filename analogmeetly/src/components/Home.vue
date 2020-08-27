@@ -33,14 +33,52 @@
                 <p><strong>AnalogMeetly</strong> is a web-based system,that can be used to record meeting notes,organize meeting notes,
                     search meeting based on date,time,type or search meeting notes using the same criteria.
                 </p>
+                <button type="button">Read More</button>
             </div>
+        </div>
+        <!-- features -->
+        <div class="features">
+            <div class="card-group">
+                <div class="card">
+                    <img :src="require(`@/assets/${'a.jpg'}`)" alt="features" style="max-width:100%;height:auto">
+                    <div class="card-body">
+                    <h5 class="card-title">Add Meeting Note(s)</h5>
+                    <p class="card-text">One of the biggest struggles people have with note-taking is keeping their notes organized in a way that they can actually find and revisit in a valuable way later.AnalogMeetly provides a one-time solution by keeping notes neat and well organized.</p>
+                    <p class="card-text"><small class="text-muted">{{timer}}</small></p>
+                    </div>
+                </div>
+                <div class="card">
+                     <img :src="require(`@/assets/${'d.jpg'}`)" alt="features" style="max-width:100%;height:auto">
+                    <div class="card-body">
+                    <h5 class="card-title">Search Meeting(s)</h5>
+                    <p class="card-text">AnalogMeetly provides a systematic way to seacrh meetings based on time,the type of meeting,attendants and so on.With AnalogMeetly,you can get access to the past meetings,what was discussed,the type of meeting and even those who attended.</p>
+                    <p class="card-text"><small class="text-muted">{{timer}}</small></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img :src="require(`@/assets/${'h.jpg'}`)" alt="features" style="max-width:100%;height:auto">
+                    <div class="card-body">
+                    <h5 class="card-title">Search Meeting Note(s)</h5>
+                    <p class="card-text">One of the main objectives of AnalogMeetly is to provide a systematic access to meeting record.It filters meeting notes according to the specified criteria.This ensures that the right record is retrived in an organized manner.</p>
+                    <p class="card-text"><small class="text-muted">{{timer}}</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="alert alert-danger">
+            <h3>Oops - it's still in development,this is an early release😋😋</h3>
         </div>
       </div>
 </template>
 
 <script>
 export default {
-    name: "Home"
+    name: "Home",
+    computed: {
+        timer() {
+            return new Date().toString()
+        }
+    }
 }
 </script>
 
@@ -86,36 +124,49 @@ export default {
             outline: none;
         }
         .about{
-            display:flex;
-            flex-direction: column;
-            background:rgb(144, 145, 202);
-            height: 90vh;
+            display:block;
+            max-width: 100%;
+            background: #cbc4d6;
+        }
+        .about .about-img{
+            max-width: 100%;
+        }
+        .about .about-img img{
+            max-width: 100%;
+            height: auto;
         }
         .about .desc{
-            position: absolute;
-            top:40%;
-        } 
-        .about-img {
+            margin:20px;
             max-width: 100%;
-            width: 100%;
-        }
-        .about-img img{
-            max-height:45%;
-            position: absolute;
-            top:20%;
-            left:-10%;
         }
         .about .desc h1{
-           position: absolute;
-           top:30%;
-           left:4%;
-           font-size: 40px;
+            font-family: 'Poppins',sans-serif;
+            font-size: 40px;
         }
         .about .desc p{
-            font-family: sans-serif;
-            font-weight: 400;
-            font-size: 17.5px;
-            margin:290px 12px;
+            margin-top:25px;
+            font-family:sans-serif;
+            font-size: 17px;
+        }
+        .about .desc button{
+            padding: 20px;
+            width: 65%;
+            max-width: 70%;
+            border: none;
+            background: #7b49cc;
+            color:#fff;
+            font-family: 'Poppins',sans-serif;
+            font-size: 20px;
+            margin-top:40px;
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+         .features .card-title{
+            font-family: 'Poppins';
+        }
+        .features .card-text{
+             font-family: 'Baloo Tamma 2', cursive;
+             font-size: 18px;
         }
     }
     /* large screens */
@@ -156,29 +207,63 @@ export default {
             grid-template-columns: 1fr 1fr;
             max-width: 100%;
             width: 100%;
-            height: 90vh;
+            height: 70vh;
             max-height: 100%;
             background:rgba(0,0,250,.38);
             color: #000;
         }
         .about .about-img{
             position: absolute;
-            top:13%;
+            top:8%;
         }
         .about .about-img img{
-            max-width:70%;
+            max-width:60%;
             height: auto;
         }
         .about .desc{
             position: absolute;
-            left:60%;
-            top:25%;
+            left:56%;
+            top:18%;
             right: 4%;
         }
-        .about .desc p{
+        .about .desc h1{
+            font-size: 50px;
             font-family: 'Poppins',sans-serif;
-            font-weight: 500;
+        }
+        .about .desc p{
+            font-family: 'Baloo Tamma 2', cursive;
             line-height: 1.7em;
+            font-weight: 500;
+            font-size: 22px;
+        }
+        .about .desc button{
+            padding: 20px;
+            width: 40%;
+            max-width: 70%;
+            border: none;
+            background:#6613ED;
+            color:#fff;
+            font-family: 'Poppins',sans-serif;
+            font-size: 20px;
+            margin-top:40px;
+            margin-bottom: 30px;
+            cursor: pointer;
+            outline: none;
+            transition: 300ms ease-in-out;
+        }
+        .about .desc button:hover{
+            transform: scale(1.09);
+            text-decoration: underline;
+        }
+        .features{
+            margin-top:2%;
+        }
+        .features .card-title{
+            font-family: 'Poppins';
+        }
+        .features .card-text{
+             font-family: 'Baloo Tamma 2', cursive;
+             font-size: 18px;
         }
     }
 </style>
