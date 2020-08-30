@@ -15,11 +15,11 @@
       <div class="search-meetings">
           <h1>Search Meeting</h1>
           <div class="form">
-              <input type="text" class="form-control" placeholder="Filter by meeting type">
+              <input type="text" class="form-control" placeholder="Filter by meeting type" v-model="meetingType">
               <input type="date" class="form-control" placeholder="Filter by department name">
               <input type="date" class="form-control" placeholder="Filter by date">
               <input type="number" class="form-control" placeholder="Filter by attendants">
-              <button type="button">Filter Meeting(s)</button>
+              <button type="button" @click="queryMeeting">Filter Meeting(s)</button>
           </div>
       </div>
       <!-- search notes -->
@@ -38,7 +38,17 @@
 
 <script>
 export default {
-    name: "Meetings"
+    name: "Meetings",
+    data() {
+        return{
+            meetingType: ''
+        }
+    },
+    methods: {
+        queryMeeting() {
+            this.$emit('queryString',this.meetingType)
+        }
+    }
 }
 </script>
 

@@ -11,9 +11,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
+    <tr :key="meeting.id" v-for="meeting in meetings">
       <th scope="row">1</th>
-      <td></td>
+      <td>{{meeting.id}}</td>
+      <td>{{meeting.name}}</td>
+      <td>{{meeting.location}}</td>
+      <td>{{meeting.name}}</td>
     </tr>
   </tbody>
 </table>
@@ -22,7 +25,8 @@
 
 <script>
 export default {
-    name: "Lists"
+    name: "Lists",
+    props: ["meetings"]
 }
 </script>
 

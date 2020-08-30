@@ -4,8 +4,8 @@
       <div class="row">
         <div class="col-12" >
           <Home />
-          <Meetings />
-          <Lists />
+          <Meetings @queryString="queryData"/>
+          <Lists :meetings="meetingList"/>
           <Footer />
         </div>
       </div>
@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import Home from './components/Home';
 import Meetings from './components/Meetings';
 import Footer from './components/Footer';
@@ -27,7 +28,19 @@ export default {
   },
   data() {
     return{
-      
+      meetingList: []
+    }
+  },
+  methods: {
+    queryData(){
+      axios.get('https://my-json-server.typicode.com/ZachyDev/ZachyAPI/companies')
+        .then(res => {
+          console.log(res.data);
+          this.meetingList = res.data
+        })
+        .catch(err => {
+          console.log(err)
+        })
     }
   }
 }
