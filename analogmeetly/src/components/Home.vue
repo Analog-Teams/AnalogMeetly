@@ -30,10 +30,10 @@
             <!-- description -->
             <div class="desc">
                 <h1>Home</h1>
-                <p><strong>AnalogMeetly</strong> is a web-based system,that can be used to record meeting notes,organize meeting notes,
+                <p><strong>AnalogMeetly</strong> is a web application that can be used to record meeting notes,organize meeting notes,
                     search meeting based on date,time,type or search meeting notes using the same criteria.
                 </p>
-                <button type="button">Read More</button>
+                <button type="button" @click="readMore">Read More</button>
             </div>
         </div>
         <!-- features -->
@@ -65,9 +65,6 @@
                 </div>
             </div>
         </div>
-        <div class="alert alert-danger">
-            <h3>Oops - it's still in development,this is an early release😋😋</h3>
-        </div>
       </div>
 </template>
 
@@ -77,6 +74,11 @@ export default {
     computed: {
         timer() {
             return new Date().toString()
+        }
+    },
+    methods: {
+        readMore() {
+            return window.location = 'https://analogteams.com'
         }
     }
 }
@@ -105,7 +107,7 @@ export default {
             margin-left: -10px;
         }
         #nav #span{
-            color: #6613ED;
+            color:#9875d6;
             font-family: 'Poppins',sans-serif;
             font-size: 25px;
             text-transform: uppercase;
@@ -208,7 +210,7 @@ export default {
             max-width: 100%;
             width: 100%;
             height: 70vh;
-            max-height: 100%;
+            max-height: 70vh;
             background:rgba(0,0,250,.38);
             color: #000;
         }
@@ -260,10 +262,11 @@ export default {
         }
         .features .card-title{
             font-family: 'Poppins';
+            font-size: 26px;
         }
         .features .card-text{
              font-family: 'Baloo Tamma 2', cursive;
-             font-size: 18px;
+             font-size: 20px;
         }
     }
 </style>
