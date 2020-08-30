@@ -8,7 +8,7 @@
               <input type="text" class="form-control" placeholder="Name of department">
               <input type="date" class="form-control" placeholder="Date of meeting">
               <input type="number" class="form-control" placeholder="Number of attendants">
-              <button type="button">Add Notes</button>
+              <button type="button">Add Note(s)</button>
           </div>
       </div>
       <!-- search meeting -->
@@ -62,6 +62,7 @@ export default {
         margin-top:15px;
         padding: 20px;
         max-width: 450px;
+        margin-left: 13px;
     }
     .add-notes{
         margin:40px 20px;
@@ -76,7 +77,7 @@ export default {
         padding: 15px;
         width: 200px;
         max-width: 200px;
-        margin: 20px 8px;
+        margin: 20px 12px;
         background: #6613ED;
         border:none;
         outline: none;
@@ -91,21 +92,50 @@ export default {
 }
     @media (max-width:768px) {
         .meetings {
-            height: 100%;
             max-height: 100%;
+            height: 30%;
             display: block;
+            width: 100%;
+            max-width: 100%;
+            background: rgba(0,0,0,1);
+        }
+        .meetings h1{
+            color: #fff;
+            font-family: 'Baloo Tamma 2', cursive;
+            font-size: 30px;
         }
         .meetings input {
-            padding: 21px;
+            margin-top:15px;
+            padding: 20px;
+            max-width: 450px;
+      
         }
         .meetings .search-meetings {
             margin:40px;
         }
         .meetings .add-notes {
-            margin:40px;
+            margin: 40px;
         }
         .meetings .search-notes{
             margin:40px;
+        }
+         .meetings button {
+            padding: 15px;
+            width: 200px;
+            max-width: 200px;
+            margin: 20px 2px;
+            background: #6613ED;
+            border:none;
+            outline: none;
+            color: #fff;
+            font-family: 'Poppins',san-serif;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        .meetings button:hover{
+            background: #8860c9;
+            transform: scale(0.9);
+            transition: 200ms ease-in;
         }
     }
   
