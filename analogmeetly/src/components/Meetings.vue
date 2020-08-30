@@ -8,7 +8,7 @@
               <input type="text" class="form-control" placeholder="Name of department">
               <input type="date" class="form-control" placeholder="Date of meeting">
               <input type="number" class="form-control" placeholder="Number of attendants">
-              <button type="button" class="btn btn-success">Add Notes</button>
+              <button type="button">Add Notes</button>
           </div>
       </div>
       <!-- search meeting -->
@@ -19,7 +19,7 @@
               <input type="date" class="form-control" placeholder="Filter by department name">
               <input type="date" class="form-control" placeholder="Filter by date">
               <input type="number" class="form-control" placeholder="Filter by attendants">
-              <button type="button" class="btn btn-success">Filter Meeting(s)</button>
+              <button type="button">Filter Meeting(s)</button>
           </div>
       </div>
       <!-- search notes -->
@@ -30,7 +30,7 @@
               <input type="date" class="form-control" placeholder="Filter by department name">
               <input type="date" class="form-control" placeholder="Filter by date">
               <input type="number" class="form-control" placeholder="Filter by attendants">
-              <button type="button" class="btn btn-success">Filter Note(s)</button>
+              <button type="button">Filter Note(s)</button>
           </div>
       </div>
   </div>
@@ -43,6 +43,8 @@ export default {
 </script>
 
 <style scoped>
+@media (min-width:768px) {
+    
     .meetings{
         width: 100%;
         max-width: 100%;
@@ -75,7 +77,18 @@ export default {
         width: 200px;
         max-width: 200px;
         margin: 20px 8px;
+        background: #6613ED;
+        border:none;
+        outline: none;
+        color: #fff;
+        font-family: 'Poppins',san-serif;
+        font-size: 15px;
     }
+    .meetings button:hover{
+        background: #7e49d3;
+        transition: 200ms ease-out;
+    }
+}
     @media (max-width:768px) {
         .meetings {
             height: 100%;

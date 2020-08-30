@@ -175,10 +175,10 @@ export default {
     @media (min-width:768px) {
         #nav{
             max-width: 100%;
-            padding: 35px;
+            padding: 18px;
         }
         .nav-item .nav-link {
-            font-size: 20px;
+            font-size: 17px;
         }
         #nav img{
             max-height: 75px;
@@ -189,8 +189,8 @@ export default {
             font-size: 35px;
             text-transform: uppercase;
             position: absolute;
-            left:318px;
-            top:50px;
+            left:300px;
+            top:32px;
         }
         .navbar-nav{
             position: absolute;
@@ -216,16 +216,16 @@ export default {
         }
         .about .about-img{
             position: absolute;
-            top:8%;
+            top:4%;
         }
         .about .about-img img{
-            max-width:60%;
+            max-width:55%;
             height: auto;
         }
         .about .desc{
             position: absolute;
             left:56%;
-            top:18%;
+            top:11%;
             right: 4%;
         }
         .about .desc h1{
@@ -236,7 +236,7 @@ export default {
             font-family: 'Baloo Tamma 2', cursive;
             line-height: 1.7em;
             font-weight: 500;
-            font-size: 22px;
+            font-size: 19px;
         }
         .about .desc button{
             padding: 20px;
@@ -262,11 +262,11 @@ export default {
         }
         .features .card-title{
             font-family: 'Poppins';
-            font-size: 26px;
+            font-size: 22px;
         }
         .features .card-text{
              font-family: 'Baloo Tamma 2', cursive;
-             font-size: 20px;
+             font-size: 17px;
         }
     }
 </style>
