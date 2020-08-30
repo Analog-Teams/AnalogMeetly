@@ -57,7 +57,7 @@ export default {
     @media(max-width:768px) {
         .footer{
             display: block;
-            margin: -40px 0;
+            margin: -10px 0;
             max-width: 100%;
             width: 100%;
             height: 45vh;

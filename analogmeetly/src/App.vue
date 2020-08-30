@@ -5,6 +5,7 @@
         <div class="col-12" >
           <Home />
           <Meetings />
+          <Lists />
           <Footer />
         </div>
       </div>
@@ -16,11 +17,18 @@
 import Home from './components/Home';
 import Meetings from './components/Meetings';
 import Footer from './components/Footer';
+import Lists from './components/Lists';
 export default {
   components: {
     Home,
     Meetings,
-    Footer
+    Footer,
+    Lists
+  },
+  data() {
+    return{
+      
+    }
   }
 }
 </script>
