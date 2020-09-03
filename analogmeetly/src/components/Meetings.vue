@@ -4,33 +4,33 @@
       <div class="add-notes">
           <h1>Add Meeting Notes</h1>
           <div class="form">
-              <input type="text" class="form-control" placeholder="Type of meeting">
-              <input type="text" class="form-control" placeholder="Name of department">
-              <input type="date" class="form-control" placeholder="Date of meeting">
-              <input type="number" class="form-control" placeholder="Number of attendants">
-              <button type="button">Add Note(s)</button>
+              <input type="text" class="form-control" placeholder="Type of meeting" v-model="type">
+              <input type="text" class="form-control" placeholder="Name of department" v-model="department">
+              <input type="date" class="form-control" placeholder="Date of meeting" v-model="date">
+              <input type="number" class="form-control" placeholder="Number of attendants" v-model="attendees">
+              <button type="button" @click="saveNotes">Add Note(s)</button>
           </div>
       </div>
       <!-- search meeting -->
       <div class="search-meetings">
           <h1>Search Meeting</h1>
           <div class="form">
-              <input type="text" class="form-control" placeholder="Filter by meeting type" v-model="meetingType">
-              <input type="date" class="form-control" placeholder="Filter by department name">
-              <input type="date" class="form-control" placeholder="Filter by date">
-              <input type="number" class="form-control" placeholder="Filter by attendants">
-              <button type="button" @click="queryMeeting">Filter Meeting(s)</button>
+              <input type="text" class="form-control" placeholder="Filter by meeting type" v-model="fmType">
+              <input type="text" class="form-control" placeholder="Filter by department name" v-model="fmDepartment">
+              <input type="date" class="form-control" placeholder="Filter by date" v-model="fmDate">
+              <input type="number" class="form-control" placeholder="Filter by attendants" v-model="fmAttendees">
+              <button type="button" @click="filterMeetingsData">Filter Meeting(s)</button>
           </div>
       </div>
       <!-- search notes -->
       <div class="search-notes">
           <h1>Search Notes</h1>
           <div class="form">
-              <input type="text" class="form-control" placeholder="Filter by meeting type">
-              <input type="date" class="form-control" placeholder="Filter by department name">
-              <input type="date" class="form-control" placeholder="Filter by date">
-              <input type="number" class="form-control" placeholder="Filter by attendants">
-              <button type="button">Filter Note(s)</button>
+              <input type="text" class="form-control" placeholder="Filter by meeting type" v-model="fnType">
+              <input type="text" class="form-control" placeholder="Filter by department name" v-model="fnDepartment">
+              <input type="date" class="form-control" placeholder="Filter by date" v-model="fnDate">
+              <input type="number" class="form-control" placeholder="Filter by attendants" v-model="fnAttendees">
+              <button type="button" @click="filterNotesData">Filter Note(s)</button>
           </div>
       </div>
   </div>
@@ -41,13 +41,34 @@ export default {
     name: "Meetings",
     data() {
         return{
-            meetingType: ''
+            type: '',
+            department: '',
+            date: '',
+            attendees: '',
+            fnType: '',
+            fnDepartment: '',
+            fnDate: '',
+            fnAttendees: '',
+            fmType: '',
+            fmDepartment: '',
+            fmDate: '',
+            fmAttendees: ''
         }
     },
     methods: {
-        queryMeeting() {
-            this.$emit('queryString',this.meetingType)
-        }
+       saveNotes() {
+        this.$emit('saveNotes',this.type,this.date,this.department,this.attendees);
+        alert('A new record has been added')
+       },
+      //filterMeetingsData
+      filterMeetingsData() {
+          this.$emit('filterMeetingsData',this.fmType,this.fmDate,this.fmDepartment,this.fmAttendees);
+      },
+       //filterNotessData
+      filterNotesData() {
+          this.$emit('filterNotesData',this.fnType,this.fnDate,this.fnDepartment,this.fnAttendees);
+      }
+
     }
 }
 </script>

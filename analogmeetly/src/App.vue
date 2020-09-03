@@ -4,8 +4,8 @@
       <div class="row">
         <div class="col-12" >
           <Home />
-          <Meetings @queryString="queryData"/>
-          <Lists :meetings="meetingList"/>
+          <Meetings @saveNotes="saveNotes" @filterMeetingsData="filterMeetingsData" @filterNotesData="filterNotesData"/>
+          <Lists :notes="saveAllNotes" :meetings="filteredData"/>
           <Footer />
         </div>
       </div>
@@ -28,21 +28,39 @@ export default {
   },
   data() {
     return{
-      meetingList: []
+      saveAllNotes: [],
+      notesArray: [],
+      filteredData: []
     }
   },
   methods: {
-    queryData(){
-      axios.get('https://my-json-server.typicode.com/ZachyDev/ZachyAPI/companies')
-        .then(res => {
-          console.log(res.data);
-          this.meetingList = res.data
+    saveNotes(type,date,department,attendees) {
+      this.notesArray = {type,date,department,attendees};
+      return this.saveAllNotes.push(this.notesArray);
+    },
+    filterMeetingsData(type,date,department,attendees) {
+      console.log(type,date,department,attendees)
+      axios.get(`http://my-json-server.typicode.com/ZachyDev/meetlydb/meetings?type=${type}`)
+        .then(res=> {
+          // console.log(res.data)
+          this.filteredData = res.data;
+
         })
-        .catch(err => {
-          console.log(err)
+        .catch(err => console.log(err))
+    },
+    filterNotesData(type,date,department,attendees) {
+      console.log(type,date,department,attendees);
+       axios.get(`http://my-json-server.typicode.com/ZachyDev/meetlydb/meetings?type=${type}`)
+        .then(res=> {
+          // console.log(res.data)
+          this.filteredData = res.data;
+
         })
-    }
+        .catch(err => alert('Record not found!',err))
+    },
+    
   }
+
 }
 </script>
 
